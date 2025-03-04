@@ -1,0 +1,30 @@
+﻿@model List<BookingViewModel.Hotel>
+@{
+    Layout = null;
+    int count = 0;
+}
+
+<link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+<div class="container">
+    <br /><br />
+    <table class="table table-bordered">
+        <tr>
+            <th>#</th>
+            <th>Film Adı</th>
+            <th>Açıklama</th>
+            <th>Fotoğraf</th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            count++;
+            <tr>
+                <td>@count</td>
+                <td>@item.property.name</td>
+                <td>@item.property.reviewScore</td>
+                <td><img style="height:150px;width:80px;" src="@item.property.photoUrls[0]" /></td>
+                <td><a class="btn btn-outline-warning" href="#">Detaylar</a></td>
+            </tr>
+        }
+    </table>
+</div>

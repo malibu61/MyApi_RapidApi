@@ -1,0 +1,55 @@
+﻿@model List<EntityLayer.Concrete.AppUser>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/AdminLayout/_AdminLayout.cshtml";
+    string engagementStateColor = "";
+    string engagementStatePercent = "";
+}
+
+<table class="table table-xs mb-0">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Ad Soyad</th>
+            <th>Şehir</th>
+            <th>Aktiflik Skoru</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td><img src="@item.ImageUrl" style="width:50px;height:50px;" class=" rounded-circle mr-3" alt=""></td>
+                <td>@item.Name @item.Surname</td>
+                <td>@item.City</td>
+
+                @if (item.EngagementScore >= 0 && item.EngagementScore < 50)
+                {
+                    engagementStateColor = "progress-bar bg-danger";
+                    engagementStatePercent = "width:" + item.EngagementScore + "%";
+                }
+                else if (item.EngagementScore >= 50 && item.EngagementScore < 75)
+                {
+                    engagementStateColor = "progress-bar bg-warning";
+                    engagementStatePercent = "width:" + item.EngagementScore + "%";
+                }
+                else if (item.EngagementScore >= 75 && item.EngagementScore <= 100)
+                {
+                    engagementStateColor = "progress-bar bg-success";
+                    engagementStatePercent = "width:" + item.EngagementScore + "%";
+                }
+
+                <td>
+                    <div>
+                        <div class="progress" style="height: 6px">
+                            <div class="@engagementStateColor" style="@engagementStatePercent"></div><p>@item.EngagementScore</p>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<br />
+<a href="/Register/Index/" class="btn btn-primary">Yeni Kullanıcı Kaydı</a>

@@ -1,0 +1,31 @@
+﻿@model List<BookingApiLocationSearchViewModel.Datum>
+@{
+    Layout = null;
+}
+
+<link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+<div class="container">
+    <br /><br />
+
+
+    @Html.BeginForm("Index","SearchLocationId",FormMethod.Post)
+    {
+        <input type="text" class="form-control" name="cityName"/>
+        <button class="btn btn-outline-success">Şehir Adını Gönder</button>
+    }
+
+
+    <table class="table table-bordered">
+        <tr>
+            <th>Lokasyon</th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            @* count++; *@
+            <tr>
+                <td>@item.dest_id</td>
+            </tr>
+        }
+    </table>
+</div>
