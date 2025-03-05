@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.IdentityModel.Tokens;
 using Newtonsoft.Json;
 using System.Text;
 using WebUI.Dtos.BookingDto;
@@ -28,9 +29,14 @@ namespace WebUI.Controllers
         public async Task<IActionResult> AddBooking(CreateBookingDto createBookingDto)
         {
             createBookingDto.Status = "Onay Bekliyor";
-            createBookingDto.Description = "denemeDesc";
-            createBookingDto.City = "denemeCity";
-            createBookingDto.Country= "denemeCountry";
+            createBookingDto.Description = "Açıklama";
+            createBookingDto.City = "İstanbul";
+            createBookingDto.Country = "Türkiye";
+
+            if (string.IsNullOrEmpty(createBookingDto.Description))
+            {
+                createBookingDto.Description = "-";
+            }
             var client = _httpClientFactory.CreateClient();
             var jsonData = JsonConvert.SerializeObject(createBookingDto);
             StringContent stringContent = new StringContent(jsonData, Encoding.UTF8, "application/json");
