@@ -82,7 +82,7 @@ namespace WebUI.Controllers
             var client = _httpClientFactory.CreateClient();
             var jsonData = JsonConvert.SerializeObject(updateBookingDto);
             StringContent stringContent = new StringContent(jsonData, Encoding.UTF8, "application/json");
-            var responseMessage = await client.PutAsync("http://localhost:5064/api/Booking/UpdateBooking/", stringContent);
+            var responseMessage = await client.PutAsync("http://localhost:5064/api/Booking/Booking/", stringContent);
             if (responseMessage.IsSuccessStatusCode)
             {
                 return RedirectToAction("Index");
