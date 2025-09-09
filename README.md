@@ -75,7 +75,17 @@ This project provides a system where users can make online reservations and cont
 
 
 
+
+
+
+
+
 ![8](https://github.com/user-attachments/assets/77fe8cde-b581-480d-92da-d7a949e41f2e)
+
+
+
+
+
 
 
 
@@ -91,7 +101,17 @@ This project provides a system where users can make online reservations and cont
 
 
 
+
+
+
+
+
 ![6](https://github.com/user-attachments/assets/c1192e08-8d52-42c4-a35a-d42763fa64bc)
+
+
+
+
+
 
 
 
@@ -107,7 +127,17 @@ This project provides a system where users can make online reservations and cont
 
 
 
+
+
+
+
+
 ![4](https://github.com/user-attachments/assets/83cd00de-4ebf-434c-ab84-74bcd24edf89)
+
+
+
+
+
 
 
 
@@ -123,7 +153,17 @@ This project provides a system where users can make online reservations and cont
 
 
 
+
+
+
+
+
 ![2](https://github.com/user-attachments/assets/802b938f-9bfe-43a2-b148-0026e5f7a39c)
+
+
+
+
+
 
 
 
